@@ -24,6 +24,13 @@ class AmoCRM::Client
     validate response
   end
 
+  def authorize!(user_login: , user_hash: )
+    res = authorize user_login: user_login, user_hash: user_hash
+    raise "AmoCRM is not authorized #{res}" unless res.auth
+
+    res
+  end
+
   def get path, params={}
     logger.debug "Client: GET #{path} #{params}"
     validate connection.get PREFIX_PATH + path, params, { Cookie: cookie }
