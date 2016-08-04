@@ -1,5 +1,6 @@
 *.gem
 *.rbc
+test.*
 tags
 gems.tags
 .bundle
