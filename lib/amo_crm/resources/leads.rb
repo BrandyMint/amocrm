@@ -25,7 +25,7 @@ module AmoCRM::Resources
     end
 
     def self.resource_name
-      :companies
+      :leads
     end
   end
 end

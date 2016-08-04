@@ -10,7 +10,7 @@ module AmoCRM::Resources
 
   require_relative 'resources/base'
   require_relative 'resources/indexed'
-  require_relative 'resources/company'
+  require_relative 'resources/companies'
   require_relative 'resources/leads'
   require_relative 'resources/contacts'
   require_relative 'resources/account'

@@ -63,6 +63,7 @@ class AmoCRM::Client
   def validate res
     AmoCRM::Client::Errors.build res unless res.status == 200
 
-    Hashie::Mash.new JSON.parse(res.body)['response']
+    data = JSON.parse(res.body)['response']
+    Hashie::Mash.new data
   end
 end

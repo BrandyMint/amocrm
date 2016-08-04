@@ -29,7 +29,9 @@ module AmoCRM
 
     @@resources_list = []
     AmoCRM::Resources.resources.each do |resource_klass|
-      @@resources_list << resource_klass.resource_name.to_sym
+      resource = resource_klass.resource_name.to_sym
+      fail "Already have such resource #{resource}" if @@resources_list.include? resource
+      @@resources_list << resource
       define_method resource_klass.resource_name do
         @resources[resource_klass.type] ||= resource_klass.indexed( client: client )
       end
