@@ -23,7 +23,7 @@ module AmoCRM
     # @param user_hash
     def self.build user_login: , user_hash: , url:
       client = client_class.new url: url
-      client.authorize user_login: user_login, user_hash: user_hash
+      client.authorize! user_login: user_login, user_hash: user_hash
       new client: client
     end
 

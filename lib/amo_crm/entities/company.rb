@@ -12,6 +12,10 @@ module AmoCRM::Entities
 
     attribute :custom_fields, Array[CustomFieldValue]
 
+    def to_s
+      as_json.to_s
+    end
+
     def attributes_for_update
       {
         id: id,

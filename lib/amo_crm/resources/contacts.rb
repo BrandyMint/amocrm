@@ -1,9 +1,5 @@
 module AmoCRM::Resources
   class Contacts < Base
-    def all
-      page.items
-    end
-
     def set_path
       'contacts/set'
     end
