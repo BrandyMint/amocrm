@@ -8,7 +8,7 @@ class AmoCRM::Client
     end
 
     def to_s
-      "#{state} #{message}"
+      "#{state}: #{message}"
     end
   end
 end
