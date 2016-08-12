@@ -1,14 +1,16 @@
 class AmoCRM::Client
   class Error < StandardError
-    attr_reader :message, :state
-
-    def initialize state, message
+    def initialize state, body
       @state = state
-      @message = message
+      @body = body
+    end
+
+    def message
+      to_s
     end
 
     def to_s
-      "#{state}: #{message}"
+      "#{state}: #{body}"
     end
   end
 end
