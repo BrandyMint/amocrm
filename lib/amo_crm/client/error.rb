@@ -1,5 +1,7 @@
 class AmoCRM::Client
   class Error < StandardError
+    attr_reader :state, :body
+
     def initialize state, body
       @state = state
       @body = body
