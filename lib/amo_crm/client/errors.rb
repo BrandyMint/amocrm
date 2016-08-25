@@ -4,7 +4,7 @@ class AmoCRM::Client
   class Errors
     def self.build res
       if res.try(:body).present?
-        AmoCRM.logger.error "AmoCRM::Client: #{res.class} #{res.headers['Content-Type']} #{res.status}: #{res.env.url.to_s}\n#{body}"
+        AmoCRM.logger.error "AmoCRM::Client: #{res.class} #{res.headers['Content-Type']} #{res.status}: #{res.env.url.to_s}\n#{res.body}"
         body = JSON.parse(res.body) rescue { 'response' => body }
         raise Error.new res.status, body['response']
       else
