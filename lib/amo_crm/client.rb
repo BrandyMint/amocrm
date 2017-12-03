@@ -38,7 +38,7 @@ class AmoCRM::Client
 
   def authorize!(user_login: , user_hash: )
     res = authorize user_login: user_login, user_hash: user_hash
-    raise "AmoCRM is not authorized #{res}" unless res.auth
+    raise "AmoCRM is not authorized #{res.inspect}" unless res.auth
 
     res
   end
@@ -76,7 +76,7 @@ class AmoCRM::Client
     return true unless session_expired?
     raise 'No user_login to reauthorize' unless @user_login
     res = authorize user_login: @user_login, user_hash: @user_hash
-    raise "AmoCRM is not reauthorized #{res}" unless res.auth
+    raise "AmoCRM is not reauthorized #{res.inspect}" unless res.auth
 
     res
   end

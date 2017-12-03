@@ -15,4 +15,6 @@ module AmoCRM::Resources
   require_relative 'resources/contacts'
   require_relative 'resources/account'
   require_relative 'resources/custom_field'
+  require_relative 'resources/catalogs'
+  require_relative 'resources/catalog_elements'
 end
